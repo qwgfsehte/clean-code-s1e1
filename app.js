@@ -45,13 +45,18 @@ var createNewTaskElement=function(taskString){
 
     deleteButton.className="item__button-delete";
     deleteButtonImg.src='./remove.svg';
+    deleteButtonImg.classList.add("button-delete__img");
     deleteButton.appendChild(deleteButtonImg);
 
 
     //and appending.
+    checkBox.classList.add("item__checkbox");
     listItem.appendChild(checkBox);
+    label.classList.add("item__label");
     listItem.appendChild(label);
+    editInput.classList.add("item__input");
     listItem.appendChild(editInput);
+    editButton.classList.add("item__button-edit");
     listItem.appendChild(editButton);
     listItem.appendChild(deleteButton);
     return listItem;
@@ -66,6 +71,7 @@ var addTask=function(){
     var listItem=createNewTaskElement(taskInput.value);
 
     //Append listItem to incompleteTaskHolder
+    listItem.classList.add("list__item");
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskCompleted);
 
